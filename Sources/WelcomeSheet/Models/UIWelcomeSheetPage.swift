@@ -1,15 +1,15 @@
 //
 //  UIWelcomeSheetPage.swift
-//  
+//
 //
 //  Created by Eskil Gjerde Sviggum on 18/01/2023.
 //
 
+import SwiftUI
 import UIKit
 
 @objc
 public class UIWelcomeSheetPage: NSObject {
-    
     /// Large title displayed on the top.
     @IBInspectable
     public var title: String = ""
@@ -49,6 +49,6 @@ public class UIWelcomeSheetPage: NSObject {
     public var optionalButtonView: UIView?
     
     func welcomeSheetPage() -> WelcomeSheetPage {
-        WelcomeSheetPage(title: title, rows: rows.map { $0.welcomeSheetPageRow() }, accentUIColor: accentColor, backgroundUIColor: backgroundColor, mainButtonTitle: mainButtonTitle, optionalButtonTitle: optionalButtonTitle, optionalButtonURL: URL(string: optionalButtonURL ?? ""), optionalButtonAction: optionalButtonAction, optionalButtonUIView: optionalButtonView)
+        WelcomeSheetPage(title: LocalizedStringKey(title), rows: rows.map { $0.welcomeSheetPageRow() }, accentUIColor: accentColor, backgroundUIColor: backgroundColor, mainButtonTitle: LocalizedStringKey(mainButtonTitle), optionalButtonTitle: LocalizedStringKey(optionalButtonTitle ?? ""), optionalButtonURL: URL(string: optionalButtonURL ?? ""), optionalButtonAction: optionalButtonAction, optionalButtonUIView: optionalButtonView)
     }
 }

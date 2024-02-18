@@ -1,10 +1,11 @@
 //
 //  UIWelcomeSheetPageRow.swift
-//  
+//
 //
 //  Created by Eskil Gjerde Sviggum on 18/01/2023.
 //
 
+import SwiftUI
 import UIKit
 
 @objc
@@ -19,13 +20,13 @@ public class UIWelcomeSheetPageRow: NSObject {
     
     /// Image displayed at the beginning of a row.
     @IBInspectable
-    public var image: UIImage = UIImage()
+    public var image: UIImage = .init()
     
     /// Color used for image. When `nil`, uses default accent color.
     @IBInspectable
     public var accentColor: UIColor?
     
     func welcomeSheetPageRow() -> WelcomeSheetPageRow {
-        WelcomeSheetPageRow(uiImage: image, accentUIColor: accentColor, title: title, content: content)
+        WelcomeSheetPageRow(uiImage: image, accentUIColor: accentColor, title: LocalizedStringKey(title), content: LocalizedStringKey(content))
     }
 }
